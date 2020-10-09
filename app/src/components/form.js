@@ -2,22 +2,26 @@ import React from 'react';
 import { ScrollView, StyleSheet, TextInput, Text, View  } from 'react-native';
 import colores from '../utils/colores';
 import RNPickerSelect from 'react-native-picker-select';
-export default function Form(){
+export default function Form(props){
+    // console.log("Props", props);
+    const {setCapital, setInteres, setMeses} = props;
     return(
             <View style={stilo.formulario}>
                 <View style={stilo.rowInput}>
                     <TextInput 
                     style={stilo.input}
                     placeholder = "cantidad"
+                    onChange={(e)=>setCapital(e.nativeEvent.text)}
                     />
                     <TextInput
                     style={[stilo.input, stilo.inputPersonalizado]}
                     placeholder = "interes"
+                    onChange={(e)=>setInteres(e.nativeEvent.text)}
                     />
                 </View>
                 
                 <RNPickerSelect
-                onValueChange={(value) => console.log(value)}
+                onValueChange={(value) => setMeses(value)}
                 items={[
                     { label: '3 meses', value: '3' },
                     { label: '6 meses', value: '6' },

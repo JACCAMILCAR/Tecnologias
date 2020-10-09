@@ -1,7 +1,9 @@
 import React from 'react';
 import { StyleSheet, TextInput, Text, View, Button  } from 'react-native';
 import colores from '../utils/colores';
-export default function Form(){
+export default function Form(props){
+    const {capital, interes, meses, total} = props;
+    var cantidad = 1000;
     return(
             <View style={stilo.formulario}>
                 <View style={stilo.rowInput}>
@@ -9,7 +11,7 @@ export default function Form(){
                     Cantidad Solicitada
                     </Text>
                     <Text style={[stilo.titulo, stilo.inputPersonalizado,stilo.fondowith]}>
-                    1000 Bs
+                    {capital} Bs
                     </Text>
                 </View>
                 <View style={stilo.rowInput}>
@@ -17,7 +19,7 @@ export default function Form(){
                     Interes             :
                     </Text>
                     <Text style={[stilo.titulo, stilo.inputPersonalizado,stilo.fondowith]}>
-                    5%
+                        {interes}%
                     </Text>
                 </View>
                 <View style={stilo.rowInput}>
@@ -25,7 +27,7 @@ export default function Form(){
                     Plazos              :
                     </Text>
                     <Text style={[stilo.titulo, stilo.inputPersonalizado,stilo.fondowith]}>
-                    12 Meses
+                    {meses} Meses
                     </Text>
                 </View>
                 <View style={stilo.rowInput}>
@@ -33,7 +35,7 @@ export default function Form(){
                     Pago Mensual:
                     </Text>
                     <Text style={[stilo.titulo, stilo.inputPersonalizado,stilo.fondowith]}>
-                    87.5 Bs
+                        87.5 Bs
                     </Text>
                 </View>
                 <View style={stilo.rowInput}>
@@ -41,7 +43,7 @@ export default function Form(){
                     Total a pagar  :
                     </Text>
                     <Text style={[stilo.titulo, stilo.inputPersonalizado,stilo.fondowith]}>
-                    1050
+                    1000000
                     </Text>
                 </View>
                 

@@ -1,9 +1,10 @@
 import React from 'react';
 import { StyleSheet, TouchableOpacity, Text, View } from 'react-native';
 import colores from '../utils/colores';
-export default function FooterButton(){
+export default function FooterButton(props){
+    const {calcular} = props
     return(
-        <TouchableOpacity onPress>
+        <TouchableOpacity onPress={calcular}>
             <View style={stilo.button}>
                 <Text style={[stilo.textButton]}>
                     CALCULAR
